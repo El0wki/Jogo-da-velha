@@ -1,0 +1,17 @@
+tic-tac-toe {
+  height: 100px;
+  width: 100px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+tic-tac-toe * {
+  width: 100%;
+  height: 100%;
+  place-self: center;
+  cursor: pointer;
+  display: flex;
+  place-items: center;
+  place-content: center;
+}

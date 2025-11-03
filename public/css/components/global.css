@@ -1,0 +1,52 @@
+@import url(/public/css/base/colors.css);
+@import url(/public/css/base/measurements.css);
+
+body,
+html {
+  height: 100dvh;
+  width: 100dvw;
+  margin: 0;
+}
+
+body * {
+  margin: 0;
+}
+
+@keyframes bgMovement {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body[data-theme="main"] {
+  background: linear-gradient(
+    270deg,
+    var(--primary-color),
+    var(--secondary-color),
+    var(--terciary-color)
+  );
+  background-size: 600% 600%;
+  animation: bgMovement 12s ease-in-out infinite;
+  will-change: background-position;
+}
+
+body {
+  display: flex;
+  place-items: center;
+  place-content: center;
+}
+
+select,
+select option {
+  cursor: pointer;
+}
+
+*:disabled {
+  cursor: not-allowed !important;
+}

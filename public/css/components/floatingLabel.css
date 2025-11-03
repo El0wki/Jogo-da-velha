@@ -1,0 +1,21 @@
+floating-label {
+  position: relative;
+}
+
+floating-label input {
+  height: 1.8em;
+}
+floating-label label {
+  position: absolute;
+  font-size: large;
+  transition: transform linear 0.15s;
+  margin-left: 5px;
+  cursor: text;
+  padding: 0 5px;
+}
+
+floating-label:focus-within label,
+floating-label input:not(:placeholder-shown) {
+  transform: translateY(-0.8em);
+  background-color: white;
+}

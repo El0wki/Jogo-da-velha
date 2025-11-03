@@ -1,0 +1,17 @@
+@keyframes mainBg {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+main {
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  background-color: rgba(255, 255, 255, 0.2);
+}

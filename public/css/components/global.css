@@ -8,6 +8,10 @@ html {
   margin: 0;
 }
 
+body{
+  cursor: url('/public/assets/cursors/X.cur') 16 16, auto;
+}
+
 body * {
   margin: 0;
 }
@@ -44,7 +48,7 @@ body {
 
 select,
 select option {
-  cursor: pointer;
+  cursor: url('/public/assets/cursors/Circle.cur'), auto;
 }
 
 *:disabled {

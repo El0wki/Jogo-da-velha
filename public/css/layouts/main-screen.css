@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@300;400;600&display=swap");
+@import url(../components/game-options.css);
+@import url(../components/user-buttons.css);
+@import url(../components/user-data.css);
 
 #main-screen {
   display: flex;
@@ -19,38 +22,3 @@
   width: var(--img-clamp);
 }
 
-#main-screen .gameOptions {
-  display: flex;
-  flex-flow: row nowrap;
-  gap: 5dvw;
-}
-
-#main-screen .gameOptions * {
-  min-width: var(--icon-clamp);
-  min-height: var(--icon-clamp);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-#main-screen .gameOptions *:hover {
-  transform: scale(1.2);
-}
-
-#main-screen .campanha {
-  background-image: url(/public/assets/campaign.svg);
-}
-
-#main-screen .jxj {
-  background-image: url(/public/assets/pvp.svg);
-}
-
-#main-screen .jxb {
-  background-image: url(/public/assets/player.svg);
-}
-
-#main-screen .bxb {
-  background-image: url(/public/assets/match.svg);
-}

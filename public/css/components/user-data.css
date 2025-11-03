@@ -1,0 +1,24 @@
+#user-data{
+    position: relative;
+    padding: 2em;
+}
+
+#user-data .return{
+    background-image: url(/public/assets/return.svg);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    border: solid 1px black;
+  cursor: url('/public/assets/cursors/Circle.cur'), auto;
+
+}
+
+#user-data > *{
+    display: flex;
+    flex-direction: column;
+}

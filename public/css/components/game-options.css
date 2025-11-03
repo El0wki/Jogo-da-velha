@@ -1,0 +1,38 @@
+#main-screen .game-options
+ {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 5dvw;
+}
+
+#main-screen .game-options
+ * {
+  min-width: var(--icon-clamp);
+  min-height: var(--icon-clamp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: url('/public/assets/cursors/Circle.cur'), auto;
+  transition: transform 0.3s ease;
+}
+
+#main-screen .game-options
+ *:hover {
+  transform: scale(1.2);
+}
+
+#main-screen .campanha {
+  background-image: url(/public/assets/campaign.svg);
+}
+
+#main-screen .jxj {
+  background-image: url(/public/assets/pvp.svg);
+}
+
+#main-screen .jxb {
+  background-image: url(/public/assets/player.svg);
+}
+
+#main-screen .bxb {
+  background-image: url(/public/assets/match.svg);
+}

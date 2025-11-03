@@ -1,25 +1,36 @@
 export class View {
   constructor() {
     this.userLogged = null;
+    this.userData.style.display = "none";
+    this.userDataRegister.style.display = "none";
+    this.userDataLogin.style.display = "none";
   }
 
-  get ticTacToe() {
-    return document.querySelector("tic-tac-toe");
+  get userButtons(){
+    return document.querySelector("#user-buttons")
   }
 
-  get register() {
-    return document.querySelector(".register");
+  get userButtonsBtn(){
+    return document.querySelectorAll("#user-buttons > *")
   }
 
-  get login() {
-    return document.querySelector(".login");
+  get userData(){
+    return document.querySelector("#user-data")
   }
 
-  get gameOptions() {
-    return document.querySelector(".gameOptions");
+  get userDataRegister(){
+    return document.querySelector("#user-data .register")
   }
 
-  initTicTaCToe() {
-    this.ticTacToe.style.display = "none";
+  get userDataLogin(){
+    return document.querySelector("#user-data .login")
   }
+
+  
+  initDataFields(){
+    this.userData.style.display = "flex";
+    this.userButtons.style.display = "none";
+  }
+
+
 }

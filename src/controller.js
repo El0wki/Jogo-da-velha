@@ -26,6 +26,25 @@ class Controller {
   async addEventListeners() {
     if (!this.view) this.view = await this.importView();
     if (!this.mask) this.mask = await this.importMasks();
+    this.view.userButtonsBtn.forEach(btn => {
+      btn.addEventListener("click", () => {
+        this.view.initDataFields();
+      })
+
+      if(btn.id == "register"){
+        btn.addEventListener("click", () => {
+         this.view.userDataRegister.style.display = "flex";
+        })
+      }
+      if(btn.id == "login"){
+        btn.addEventListener("click", () => {
+          this.view.userDataLogin.style.display = "flex";
+        })
+      }
+      console.log(btn);
+      }
+      
+    )
   }
 }
 document.addEventListener("DOMContentLoaded", async () => {

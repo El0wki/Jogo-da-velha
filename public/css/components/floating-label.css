@@ -1,5 +1,6 @@
 floating-label {
   position: relative;
+  margin: 0.5em;
 }
 
 floating-label input {
@@ -15,7 +16,7 @@ floating-label label {
 }
 
 floating-label:focus-within label,
-floating-label input:not(:placeholder-shown) {
+floating-label:has(input:not(:placeholder-shown)) label {
   transform: translateY(-0.8em);
   background-color: white;
 }

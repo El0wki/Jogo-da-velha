@@ -4,6 +4,8 @@ export class FloatingLabel extends HTMLElement {
 
     const text = this.getAttribute("text") || "";
 
+    const type = this.getAttribute("type") || "text";
+
     // evita XSS simples escapando o texto do label
     const esc = (s) =>
       String(s)
@@ -14,7 +16,7 @@ export class FloatingLabel extends HTMLElement {
 
     this.innerHTML = `
       <label for="${id}">${esc(text)}</label>
-      <input id="${id}" placeholder=""/>
+      <input type=${type} id="${id}" placeholder=""/>
     `;
     if (this.hasAttribute("id")) this.removeAttribute("id");
   }

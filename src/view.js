@@ -6,6 +6,9 @@ export class View {
     this.userDataLogin.style.display = "none";
   }
 
+  get userButtons(){
+    return document.querySelector("#user-buttons")
+  }
   get userButtonsBtn() {
     return document.querySelectorAll("#user-buttons > *");
   }

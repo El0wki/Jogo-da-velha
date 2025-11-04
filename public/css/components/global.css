@@ -9,7 +9,7 @@ html {
 }
 
 body{
-  cursor: url('/public/assets/cursors/X.cur') 16 16, auto;
+  cursor: url('/public/assets/cursors/X.cur'), auto;
 }
 
 body * {

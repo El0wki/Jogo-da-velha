@@ -1,5 +1,9 @@
-@import url(../components/global.css);
-@import url(../components/main.css);
-@import url(../components/floating-label.css);
-@import url(../layouts/tic-tac-toe.css);
-@import url(../layouts/main-screen.css);
+@import url(/public/css/components/global.css);
+@import url(/public/css/components/main.css);
+@import url(/public/css/components/floating-label.css);
+@import url(/public/css/layouts/tic-tac-toe.css);
+@import url(/public/css/layouts/main-screen.css);
+@import url(/public/css/layouts/level-grid.css);
+@import url(/public/css/components/exit.css);
+@import url(/public/css/layouts/toast-notification.css);
+@import url(/public/css/layouts/difficulty.css);

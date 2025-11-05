@@ -1,0 +1,26 @@
+.return {
+  position: absolute;
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  border: solid 1px black;
+  cursor: url("/public/assets/cursors/Circle.cur"), auto;
+}
+
+.return:hover {
+  transform: scale(1.2);
+}
+
+.return .text {
+  font-size: 1em;
+  text-align: center;
+}
+
+.return .icon {
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/public/assets/return.svg);
+  width: var(--return-clamp);
+  aspect-ratio: 1/1;
+}

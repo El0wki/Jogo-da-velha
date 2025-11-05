@@ -1,17 +1,110 @@
+/* ...existing code... */
 tic-tac-toe {
-  height: 100px;
-  width: 100px;
-  display: grid;
+  --size: 40vmin;
+  --line-color: #222;
+  --line-width: 8px;
+  --cell-bg: transparent;
+  --hit-color-x: #e53935;
+  --hit-color-o: #2b7bff;
+
+  display: inline-grid;
+  width: var(--size);
+  height: var(--size);
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
+  gap: 0;
+  position: relative;
+  box-sizing: border-box;
+
+  background-image: linear-gradient(var(--line-color), var(--line-color)),
+    linear-gradient(var(--line-color), var(--line-color)),
+    linear-gradient(var(--line-color), var(--line-color)),
+    linear-gradient(var(--line-color), var(--line-color));
+  background-repeat: no-repeat;
+  background-size: var(--line-width) 100%, 100% var(--line-width),
+    var(--line-width) 100%, 100% var(--line-width);
+  background-position: calc(33.333% - (var(--line-width) / 2)) 0,
+    0 calc(33.333% - (var(--line-width) / 2)),
+    calc(66.666% - (var(--line-width) / 2)) 0,
+    0 calc(66.666% - (var(--line-width) / 2));
 }
 
-tic-tac-toe * {
+/* mostra as células (antes estava display:none) */
+tic-tac-toe > [data-index] {
+  box-sizing: border-box;
   width: 100%;
   height: 100%;
-  place-self: center;
-  cursor: url('/public/assets/cursors/Circle.cur'), auto;
   display: flex;
-  place-items: center;
-  place-content: center;
+  align-items: center;
+  justify-content: center;
+  background: var(--cell-bg);
+  cursor: pointer;
+  position: relative;
+  transition: background 0.12s ease, transform 0.12s ease;
 }
+
+/* efeito ao passar o mouse em células vazias */
+tic-tac-toe > [data-index]:hover:not([data-state]) {
+  transform: translateY(-3%);
+}
+
+/* marca visual persistente quando data-state existe:
+   - para "x" mostramos duas barras (via pseudo) já que é visual forte
+   - para "o" usamos borda circular */
+tic-tac-toe > [data-index]::before,
+tic-tac-toe > [data-index]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.2);
+  opacity: 0;
+  transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.2, 1), opacity 0.18s;
+  pointer-events: none;
+}
+
+/* X: duas barras */
+tic-tac-toe > [data-index][data-state="x"]::before,
+tic-tac-toe > [data-index][data-state="x"]::after {
+  width: 60%;
+  height: 12%;
+  background: var(--hit-color-x);
+  border-radius: 4px;
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
+}
+tic-tac-toe > [data-index][data-state="x"]::before {
+  transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+tic-tac-toe > [data-index][data-state="x"]::after {
+  transform: translate(-50%, -50%) rotate(-45deg) scale(1);
+}
+
+/* O: usar apenas ::before como círculo */
+tic-tac-toe > [data-index][data-state="o"]::before {
+  width: 62%;
+  height: 62%;
+  border-radius: 50%;
+  background: transparent;
+  border: calc(var(--line-width) / 2) solid var(--hit-color-o);
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+tic-tac-toe > [data-index][data-state="o"]::after {
+  opacity: 0;
+}
+
+/* highlight de vitória (classe .win adicionada por JS) */
+tic-tac-toe > [data-index].win {
+  background: rgba(255, 213, 79, 0.16);
+}
+
+/* board desativado (por exemplo enquanto espera resposta) */
+tic-tac-toe.disabled > [data-index] {
+  pointer-events: none;
+  opacity: 0.6;
+  filter: grayscale(40%);
+}
+/* ...existing code... */

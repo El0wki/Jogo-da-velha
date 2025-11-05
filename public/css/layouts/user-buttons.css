@@ -1,5 +1,3 @@
-
-
 #user-buttons {
   width: auto;
   display: flex;
@@ -8,8 +6,8 @@
   place-content: space-evenly;
 }
 
-#user-buttons > * {
-    position: relative;
+#user-buttons .element {
+  position: relative;
   display: flex;
   place-content: center;
   place-items: center;
@@ -17,22 +15,23 @@
   flex-direction: column;
   padding: 8px;
   border-radius: 10px;
+  width: var(--i-clamp);
   border: solid 1px black;
   background-color: rgba(128, 128, 128, 0.2);
   transition: all ease 0.3s;
-  cursor: url('/public/assets/cursors/Circle.cur'), auto;
+  cursor: url("/public/assets/cursors/Circle.cur"), auto;
   overflow: hidden;
 }
 
-#user-buttons > *:active{
-background-color: green;
+#user-buttons .element:active {
+  background-color: green;
 }
 
-#user-buttons > *:hover{
-transform: scale(1.2);
+#user-buttons .element:hover {
+  transform: scale(1.2);
 }
 
-#user-buttons > *::before{
+#user-buttons .element::before {
   content: "";
   position: absolute;
   background-color: white;
@@ -43,44 +42,35 @@ transform: scale(1.2);
   transition: transform ease 0.2s;
 }
 
-@keyframes hover{
-from{ opacity: 0}
-  to{transform: translate(90px, -145px) rotate(-45deg)}
+@keyframes hover {
+  from {
+    opacity: 0;
+  }
+  to {
+    transform: translate(90px, -145px) rotate(-45deg);
+  }
 }
 
-
-#user-buttons > *:hover::before{
+#user-buttons .element:hover::before {
   animation: hover 0.3s ease forwards;
 }
 
-#user-buttons > * > .icon{
+#user-buttons .element .icon {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
 }
 
-
-
-#register .text{
-  
-}
-
-#register .icon{
+#user-buttons .register .icon {
   background-image: url(/public/assets/add.svg);
   position: relative;
   height: var(--icon-clamp);
   aspect-ratio: 1/1;
 }
 
-
-#login .text{
-}
-
-#login .icon{
+#user-buttons .login .icon {
   background-image: url(/public/assets/login.svg);
   position: relative;
   height: var(--icon-clamp);
   aspect-ratio: 1/1;
-  
 }
-

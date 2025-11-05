@@ -3,42 +3,103 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Tic Tac Toe</title>
+    <link rel="icon" href="/public/assets/tic-tac-toe.svg" />
     <link rel="stylesheet" href="/public/css/pages/index.css" />
   </head>
   <body data-theme="main">
     <main>
-
       <div id="main-screen">
         <img src="/public/assets/tic-tac-toe.svg" />
+
         <h1>TIC TAC TOE</h1>
+
         <div id="user-buttons">
-          <div id="register">
+          <div class="element register">
             <div class="text">REGISTRAR</div>
             <div class="icon"></div>
           </div>
-          <div id="login">
+
+          <div class="element login">
             <div class="text">LOGIN</div>
             <div class="icon"></div>
           </div>
         </div>
 
         <div id="user-data">
-          <div class="return"></div>
-          
-          <div class="register">
+          <div class="return">
+            <div class="text">Retornar</div>
             <div class="icon"></div>
-            <floating-label id="register-user" text="Usuário"></floating-label>
-            <floating-label id="register-password" text="Senha"></floating-label>
-            <button>Registrar</button>
           </div>
-          <div class="login">
+
+          <form class="element register">
+            <floating-label id="register-user" text="Usuário"></floating-label>
+            <input type="submit" />
+          </form>
+          <form class="element login">
             <floating-label id="login-user" text="Usuário"></floating-label>
-            <floating-label type="password" id="login-password" text="Senha"></floating-label>
-            <button>Entrar</button>
+
+            <input type="submit" />
+          </form>
+        </div>
+        <div id="game-options">
+          <div class="campanha" disabled>
+            <div class="text">Campanha</div>
+            <div class="icon"></div>
+          </div>
+          <div class="jxj" disabled>
+            <div class="text">Jogador x Jogador</div>
+            <div class="icon"></div>
+          </div>
+          <div class="jxb">
+            <div class="text">Jogador x Bot</div>
+            <div class="icon"></div>
+          </div>
+          <div class="bxb" disabled>
+            <div class="text">Bot x Bot</div>
+            <div class="icon"></div>
+          </div>
+          <div class="exit">
+            <div class="text">Sair</div>
+            <div class="icon"></div>
           </div>
         </div>
+      </div>
 
+      <div id="level-grid">
+        <div class="return">
+          <div class="text">Retornar</div>
+          <div class="icon"></div>
+        </div>
+        <div class="exit">
+          <div class="text">Sair</div>
+          <div class="icon"></div>
+        </div>
+
+        <a href="/public/html/01.html" target="_blank">1</a>
+        <a href="/public/html/02.html" target="_blank">2</a>
+        <a href="/public/html/03.html" target="_blank">3</a>
+        <a href="/public/html/04.html" target="_blank">4</a>
+        <a href="/public/html/05.html" target="_blank">5</a>
+      </div>
+      <form id="difficulty">
+        <button type="submit" class="btn" data-level="RANDOM">Fácil</button>
+        <button type="submit" class="btn" data-level="MONTE_CARLO">
+          Intermediário
+        </button>
+        <button type="submit" class="btn" data-level="MINIMAX">Difícil</button>
+      </form>
+      <tic-tac-toe></tic-tac-toe>
+      <div class="out">
+        <div class="return">
+          <div class="text">Retornar</div>
+          <div class="icon"></div>
+        </div>
+        <div class="exit">
+          <div class="text">Sair</div>
+          <div class="icon"></div>
+        </div>
+      </div>
     </main>
   </body>
   <script type="module" src="/src/controller.js"></script>

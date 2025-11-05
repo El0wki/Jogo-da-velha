@@ -8,10 +8,12 @@
 }
 
 main {
-  height: 80vh;
-  width: 80vw;
+  height: 90vh;
+  width: 90vw;
   display: flex;
   place-content: center;
   place-items: center;
   background-color: rgba(255, 255, 255, 0.2);
+  position: relative;
+  flex-direction: column;
 }

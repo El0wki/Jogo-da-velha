@@ -1,15 +1,15 @@
 export class TicTacToe extends HTMLElement {
   async connectedCallback() {
     this.innerHTML = `
-        <div id="0">0</div>
-        <div id="1">1</div>
-        <div id="2">2</div>
-        <div id="3">3</div>
-        <div id="4">4</div>
-        <div id="5">5</div>
-        <div id="6">6</div>
-        <div id="7">7</div>
-        <div id="8">8</div>`;
+        <div data-index="0"></div>
+        <div data-index="1"></div>
+        <div data-index="2"></div>
+        <div data-index="3"></div>
+        <div data-index="4"></div>
+        <div data-index="5"></div>
+        <div data-index="6"></div>
+        <div data-index="7"></div>
+        <div data-index="8"></div>`;
   }
 }
 

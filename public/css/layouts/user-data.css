@@ -1,0 +1,19 @@
+@import url(../components/return.css);
+
+#user-data {
+  position: relative;
+}
+
+#user-data .element:not(.return) {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  border: solid 1px black;
+  padding-top: 50px;
+  padding-bottom: 10px;
+}
+
+.return {
+  top: 0;
+  left: 0;
+}

@@ -1,0 +1,7 @@
+@import url(/public/css/components/difficulty/buttons.css);
+
+#difficulty {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}

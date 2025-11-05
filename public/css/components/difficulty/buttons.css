@@ -1,0 +1,15 @@
+.btn {
+  display: flex;
+  place-content: center;
+  place-items: center;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 10px;
+  transition: transform ease 0.3s;
+}
+
+.btn:hover {
+  cursor: url("/public/assets/cursors/Circle.cur"), auto;
+  transform: scale(1.2);
+}

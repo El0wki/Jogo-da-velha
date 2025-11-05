@@ -1,5 +1,7 @@
 :root {
-  --img-clamp: clamp(100px, 10vw, 200px);
-  --icon-clamp: clamp(3rem, 10vw, 5rem);
-  --text-clamp: clamp(1rem, 10vw, 1.5rem)
+  --img-clamp: clamp(60px, 10vw, 120px);
+  --icon-clamp: clamp(30px, 5vw, 60px);
+  --i-clamp: clamp(90px, 5vw, 120px);
+  --text-clamp: clamp(1rem, 10vw, 1.5rem);
+  --return-clamp: 30px;
 }

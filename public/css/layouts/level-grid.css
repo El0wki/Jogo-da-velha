@@ -1,0 +1,27 @@
+#level-grid {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 1vw;
+}
+
+#level-grid > a {
+  width: clamp(1rem, 10vh, 3rem);
+  aspect-ratio: 1/1;
+  display: flex;
+  place-content: center;
+  place-items: center;
+  border: 1px solid black;
+  background-color: rgb(98, 98, 255);
+  transition: transform ease 0.3s;
+}
+
+.return {
+  right: 0;
+  top: 0;
+  width: 100px;
+}
+
+#level-grid > a:hover {
+  cursor: url("/public/assets/cursors/Circle.cur"), auto;
+  transform: scale(1.1);
+}

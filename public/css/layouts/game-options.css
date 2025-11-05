@@ -1,0 +1,62 @@
+#game-options {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4dvw;
+}
+
+#game-options > * {
+  cursor: url("/public/assets/cursors/Circle.cur"), auto;
+  transition: transform 0.3s ease;
+  display: block flex;
+  flex-direction: column;
+  text-align: center;
+  place-content: center;
+  place-items: center;
+  border: 1px solid black;
+  padding: 5px;
+}
+
+#game-options > *[disabled],
+#game-options > *.disabled {
+  pointer-events: none;
+  opacity: 0.45;
+  filter: grayscale(100%);
+  cursor: default;
+  transform: none;
+}
+
+#game-options > *[disabled] :is(.icon, .text) {
+  pointer-events: none;
+}
+
+#game-options > *[disabled]:hover {
+  transform: none;
+}
+
+#game-options > * > .icon {
+  min-width: var(--icon-clamp);
+  min-height: var(--icon-clamp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#game-options > *:hover {
+  transform: scale(1.2);
+}
+
+#game-options .campanha .icon {
+  background-image: url(/public/assets/campaign.svg);
+}
+
+#game-options .jxj .icon {
+  background-image: url(/public/assets/pvp.svg);
+}
+
+#game-options .jxb .icon {
+  background-image: url(/public/assets/player.svg);
+}
+
+#game-options .bxb .icon {
+  background-image: url(/public/assets/match.svg);
+}
